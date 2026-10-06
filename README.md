@@ -41,7 +41,18 @@ Hydlearn is a simple e-learning website developed as part of the final project f
 
 ## Installation
 
-To run this project locally, follow these steps:
+To run this project locally, follow these steps.
+
+#### Prerequisites
+
+You need Python 3, Git, and Git LFS (the database file is stored with Git LFS). Check whether they are already installed:
+
+```bash
+python3 --version
+git --version
+git lfs version
+```
+#### Steps
 
 1. **Clone the repository:**
 
@@ -53,16 +64,23 @@ To run this project locally, follow these steps:
 2. **Navigate to the project directory:**
 
     ```bash
-    cd hydlearn
+    cd Hydlearn-CS50
+    ```
+    
+3. **Download the database file with Git LFS:**
+
+    ```bash
+    git lfs install
+    git lfs pull
     ```
 
-3. **Create a virtual environment:**
+4. **Create a virtual environment:**
 
     ```bash
     python3 -m venv venv
     ```
 
-4. **Activate the virtual environment:**
+5. **Activate the virtual environment:**
 
     - On macOS/Linux:
 
@@ -76,18 +94,10 @@ To run this project locally, follow these steps:
         venv\Scripts\activate
         ```
 
-5. **Install the required packages:**
+6. **Install the required packages:**
 
     ```bash
     pip install -r requirements.txt
-    ```
-
-6. **Set up the database:**
-
-    ```bash
-    flask db init
-    flask db migrate
-    flask db upgrade
     ```
 
 7. **Run the application:**
@@ -101,7 +111,7 @@ To run this project locally, follow these steps:
 
 The project follows a standard Flask application structure, with the main components being:
 ```
-Hydlearn/
+Hydlearn-CS50/
 ├── app.py
 ├── helpers.py
 ├── templates/
@@ -137,7 +147,7 @@ The `layout.html` file serves as the base template for all pages in the HydLearn
 - **Main content area:** `{% block main %}` is used to insert the main content of each page.
 - **Bootstrap JavaScript:** Includes the Bootstrap JavaScript bundle for interactive elements.
 
-By using this layout, the website maintains a consistent look and feel across all pages while allowing for dynamic content insertion through Flask's template rendering.
+The website maintains a consistent look and feel across all pages while allowing for dynamic content insertion through Flask's template rendering.
 
 ### `index.html`
 
@@ -146,7 +156,7 @@ The `index.html` file is the homepage of the HydLearn website. It extends the `l
 - **Carousel:** The homepage features a carousel with three slides, each highlighting a different aspect of HydLearn. The carousel allows users to navigate between slides and includes buttons for quick access to different sections of the website.
 - **Dynamic Content:** Each slide contains dynamic content, such as headings, descriptions, and call-to-action buttons, to engage users and encourage them to explore the website further.
 
-By using this layout, the homepage provides an attractive and informative introduction to HydLearn, helping users understand the benefits of the platform and encouraging them to take action.
+The homepage provides an attractive and informative introduction to HydLearn, helping users understand the benefits of the platform and encouraging them to take action.
 
 ### `register.html`
 
@@ -156,7 +166,7 @@ The `register.html` file is the registration page for new users. It extends the 
 - **Terms of Use:** Includes a checkbox for users to agree with the Terms of Use and Privacy Policy before signing up. (It's not implemented)
 - **Already have an account:** Provides a link for users who already have an account to log in instead of registering again.
 
-By using this layout, the registration page provides a simple and user-friendly way for new users to sign up for an account on the HydLearn website.
+The registration page provides a simple and user-friendly way for new users to sign up for an account on the HydLearn website.
 
 ### `login.html`
 
@@ -204,8 +214,8 @@ The `course.html` file displays the content of a specific course on the HydLearn
 
 - **Embedded PDF Viewer:** The main content of the page is an embedded PDF viewer that displays the course materials. Users can view the course content directly on the HydLearn website without needing to download the PDF file.
 
-### `forum.html`
-The `forum html` file is used to display a forum page where users can start new discussions and view existing posts. It extends the `layout.html` file and includes the following key components:
+### `forums.html`
+The `forums.html` file is used to display a forum page where users can start new discussions and view existing posts. It extends the `layout.html` file and includes the following key components:
 
 - **New Discussion Form:** Users can use the form at the top of the page to start a new discussion. The form includes fields for entering a title and content for the new post.
 
